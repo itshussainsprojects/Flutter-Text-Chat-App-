@@ -48,12 +48,16 @@ Set up Firestore database to store and retrieve messages.
 Set Firestore security rules as per your needs.
 Firebase Firestore Security Rules Example
 **Here’s a basic Firestore security rule setup to allow only authenticated users to read and write their data:**
+
+
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Users collection: Allow read and write only for the authenticated user.
     match /users/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
     
+    // Chats collection: Allow read and write for authenticated users.
     match /chats/{chatId}/messages/{messageId} {
       allow read, write: if request.auth != null;
     }
