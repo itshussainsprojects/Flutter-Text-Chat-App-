@@ -1,20 +1,74 @@
-<<<<<<< HEAD
-# firebaselab
+Chat App
+A simple real-time chat application built using Flutter and Firebase. This app allows users to register, log in, and communicate with each other via real-time messaging. It leverages Firebase Authentication for user management and Firestore for storing and syncing messages.
 
-A new Flutter project.
+Features
+User Registration & Login: Users can sign up and log in using Firebase Authentication (Email/Password).
+Real-time Messaging: Send and receive messages instantly with real-time updates using Firebase Firestore.
+User Search: Users can search for other users by email to start chatting.
+Message History: All chat messages are stored in Firestore and are accessible for future reference.
+Two-Way Communication: Both users can send and receive messages in real-time.
+Tech Stack
+Flutter: Framework used for building the mobile app.
+Firebase Authentication: For user registration and login.
+Firestore: For storing and syncing messages in real-time.
+Setup
+Prerequisites
+Flutter SDK (latest version)
+Firebase Project (set up for Firestore, Firebase Authentication)
+Android Studio or VS Code for development
+A device or emulator for testing
+Installation
+Clone the repository:
 
-## Getting Started
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/chat-app.git
+cd chat-app
+Install Flutter dependencies:
 
-This project is a starting point for a Flutter application.
+bash
+Copy
+Edit
+flutter pub get
+Set up Firebase:
 
-A few resources to get you started if this is your first Flutter project:
+Go to the Firebase Console, create a new project.
+Add your app’s Firebase credentials to the project.
+Enable Firestore and Firebase Authentication (Email/Password).
+Run the app:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+bash
+Copy
+Edit
+flutter run
+Firebase Firestore Rules
+Ensure the Firebase Firestore rules allow read and write access for authenticated users:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# Flutter-Text-Chat-App-
->>>>>>> 1504a9611f6de48d85d5dba8eb697123eb109f75
+bash
+Copy
+Edit
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+How the App Works
+User Registration: Users can sign up with their email and password, or log in if they already have an account.
+User Search: Users can search for others by their email and start a chat.
+Messaging: Once a chat is started, users can send and receive messages in real-time.
+Message History: All messages are stored in Firestore and can be accessed anytime during the chat session.
+Features to Add in Future
+Push Notifications: Notify users when they receive new messages.
+Message Read Status: Mark messages as read/unread.
+User Profile: Allow users to update their profile information.
+Contributing
+Fork the repository.
+Create a new branch (git checkout -b feature-name).
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-name).
+Open a pull request.
+License
+This project is open source and available under the MIT License.
