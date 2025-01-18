@@ -32,7 +32,7 @@ flutter pub get
 4) **Set up Firebase in your Flutter project:**
 Follow the official Firebase documentation to add Firebase to your Flutter app: Firebase Flutter Setup
 Make sure you add your google-services.json (for Android) or GoogleService-Info.plist (for iOS) to the respective platform directories.
-5)**** Run the app:****
+5)**Run App:**
 flutter run 
 
 ****How to Use****
@@ -50,6 +50,7 @@ Firebase Firestore Security Rules Example
 **Here’s a basic Firestore security rule setup to allow only authenticated users to read and write their data:**
 
 
+****
 service cloud.firestore {
   match /databases/{database}/documents {
     // Users collection: Allow read and write only for the authenticated user.
@@ -64,7 +65,7 @@ service cloud.firestore {
   }
 }
 
-
+****
 
 ******## How to Use the Chat App******
 
