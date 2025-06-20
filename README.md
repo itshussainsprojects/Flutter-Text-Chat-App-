@@ -1,6 +1,6 @@
 # Chat App
 
-A simple real-time chat application built using Flutter and Firebase. This app allows users to register, log in, and communicate with each other via real-time messaging. It leverages Firebase Authentication for user management and Firestore for storing and syncing messages.
+A simple real-time chat application built using Flutter and Firebase. This app allows users to register, log in, and communicate with each other via real-time messaging. It leverages Firebase Authentication for user management and Firestore for storing and syncing these messeges.
 
 ### Features
 
